@@ -9,6 +9,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Install node dependencies
+      run: npm ci --ignore-scripts      
+    
+    - name: Build application with typescript
+      run: npm run build
+      
     # https://github.com/codecov/codecov-action
     - uses: codecov/codecov-action@v3
       with:
